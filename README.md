@@ -1,22 +1,19 @@
-# OrgAPI
-
-REST API для управления организационной структурой (подразделения + сотрудники).
-
-## Стек
-
-- **Go 1.22** — `net/http` без фреймворков
-- **PostgreSQL 16**
-- **GORM** — ORM
-- **goose** — миграции
-- **Docker + docker-compose**
-
 ## Запуск
 
 ```bash
+# 1. Клонировать репозиторий
+git clone https://github.com/ВАШ_НИКНЕЙМ/orgapi.git
+cd orgapi
+
+# 2. Запустить
 docker-compose up --build
 ```
 
-API доступен на `http://localhost:8080`
+## Тесты
+
+```bash
+go test ./internal/handler/... -v
+```
 
 ## Структура проекта
 
@@ -93,8 +90,3 @@ curl -X POST http://localhost:8080/departments/1/employees/ \
   -d '{"full_name": "Иван Иванов", "position": "Senior Developer"}'
 ```
 
-## Тесты
-
-```bash
-go test ./internal/handler/... -v
-```
